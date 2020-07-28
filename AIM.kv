@@ -1,0 +1,1275 @@
+WindowManager:
+    MainWindow:
+    NewStudentWindow:
+    ShowAllWindow:
+    SingleStudentDetails:
+    SingleStudentDetailsP2:
+    SingleStudentDetailsP3:
+    FeesManagementWindow:
+    PendingFees:
+    RegisterPayment:
+    TotalIncome:
+    PaymentRecords:
+    ClassManagement:
+    Scheduler:
+    RegisterClass:
+    ClassRecords:
+
+<MainWindow>:
+    name: "main"
+
+    FloatLayout:
+        size: root.width-200, root.height-200
+        Label:
+            text: "Welcome to tuition manager"
+            color: 0,0,0,1
+            size_hint: 0.8, 0.15
+            pos_hint: {"x":0.1, "top":1}
+        MDFillRoundFlatButton:
+            text: "Add new Form"
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.9, 0.15
+            pos_hint: {"x":0.05, "top":0.88}
+            on_release:
+                app.root.current = "new_student"
+                root.manager.transition.direction = "left"
+        MDFillRoundFlatButton:
+            text: "Show all Details"
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.9, 0.15
+            pos_hint: {"x":0.05, "top":0.71}
+            on_release:
+                app.root.current = "show_all_details"
+                root.manager.transition.direction = "left"
+        MDFillRoundFlatButton:
+            text: "Fees Management"
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.9, 0.15
+            pos_hint: {"x":0.05, "top":0.54}
+            on_release:
+                app.root.current = "fees_management"
+                root.manager.transition.direction = "left"
+        MDFillRoundFlatButton:
+            text: "Class management"
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.9, 0.15
+            pos_hint: {"x":0.05, "top":0.37}
+            on_release:
+                app.root.current = "class_manage"
+                root.manager.transition.direction = "left"
+        MDFillRoundFlatButton:
+            text: "Exit"
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.9, 0.15
+            pos_hint: {"x":0.05, "top":0.20}
+            on_release:
+                app.stop()
+
+
+<NewStudentWindow>:
+    name: "new_student"
+
+    namee: namee
+    age:age
+    school:school
+    address:address
+    parent_name:parent_name
+    parent_email:parent_email
+    contact:contact
+    fees:fees
+    sub_but:sub_but
+
+    FloatLayout:
+        cols:1
+        FloatLayout:
+            size: root.width, root.height/2
+
+            Label:
+                text: "Add new Student"
+                color: 0,0,0,1
+                size_hint: 0.8, 0.1
+                pos_hint: {"x":0.1, "top":1}
+                #font_size: (root.width**2 + root.height**2) / 14**4
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.05, "top":0.9}
+                text: "Name: "
+                color: 0,0,0,1
+                #font_size: (root.width**2 + root.height**2) / 14**4
+            TextInput:
+                pos_hint: {"x":0.3, "top":0.9}
+                size_hint: 0.55, 0.06
+                id: namee
+                multiline: False
+                #font_size: (root.width**2 + root.height**2) / 14**4.15
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.05, "top":0.9-0.08}
+                text: "Age: "
+                color: 0,0,0,1
+                #font_size: (root.width**2 + root.height**2) / 14**4
+            TextInput:
+                pos_hint: {"x":0.3, "top":0.9-0.08}
+                size_hint: 0.55, 0.06
+                id: age
+                multiline: False
+                #font_size: (root.width**2 + root.height**2) / 14**4.15
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.05, "top":0.9-0.16}
+                text: "School: "
+                color: 0,0,0,1
+                #font_size: (root.width**2 + root.height**2) / 14**4
+            TextInput:
+                pos_hint: {"x":0.3, "top":0.9-0.16}
+                size_hint: 0.55, 0.06
+                id: school
+                multiline: False
+                #font_size: (root.width**2 + root.height**2) / 14**4.15
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.05, "top":0.9-0.24}
+                text: "Address: "
+                color: 0,0,0,1
+                #font_size: (root.width**2 + root.height**2) / 14**4
+            TextInput:
+                pos_hint: {"x":0.3, "top":0.9-0.24}
+                size_hint: 0.55, 0.06
+                id: address
+                multiline: False
+                #font_size: (root.width**2 + root.height**2) / 14**4.15
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.05, "top":0.9-0.32}
+                text: "Parent's Name: "
+                color: 0,0,0,1
+                #font_size: (root.width**2 + root.height**2) / 14**4
+            TextInput:
+                pos_hint: {"x":0.3, "top":0.9-0.32}
+                size_hint: 0.55, 0.06
+                id: parent_name
+                multiline: False
+                #font_size: (root.width**2 + root.height**2) / 14**4.15
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.05, "top":0.9-0.40}
+                text: "Parent's Email: "
+                color: 0,0,0,1
+                #font_size: (root.width**2 + root.height**2) / 14**4
+            TextInput:
+                pos_hint: {"x":0.3, "top":0.9-0.40}
+                size_hint: 0.55, 0.06
+                id: parent_email
+                multiline: False
+                #font_size: (root.width**2 + root.height**2) / 14**4.15
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.05, "top":0.9-0.48}
+                text: "Contact No.: "
+                color: 0,0,0,1
+                #font_size: (root.width**2 + root.height**2) / 14**4
+            TextInput:
+                pos_hint: {"x":0.3, "top":0.9-0.48}
+                size_hint: 0.55, 0.06
+                id: contact
+                multiline: False
+                #font_size: (root.width**2 + root.height**2) / 14**4.15
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.05, "top":0.9-0.56}
+                text: "Fees/Class: "
+                color: 0,0,0,1
+                #font_size: (root.width**2 + root.height**2) / 14**4
+            TextInput:
+                pos_hint: {"x":0.3, "top":0.9-0.56}
+                size_hint: 0.55, 0.06
+                id: fees
+                multiline: False
+                #font_size: (root.width**2 + root.height**2) / 14**4.15
+
+        MDFillRoundFlatButton:
+            pos_hint:{"x":0.1,"y":0.03}
+            size_hint: 0.3, 0.1
+            text:"Go Back"
+            md_bg_color: (0.34,0.53,0.8,1)
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+        MDFillRoundFlatButton:
+            id:sub_but
+            pos_hint:{"x":0.6,"y":0.03}
+            size_hint: 0.3, 0.1
+            text:"Submit" if sub_but.state == "normal" else "Processing"
+            md_bg_color: (0.34,0.53,0.8,1)
+            on_release:
+                root.submit()
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+
+<ShowAllWindow>:
+    name: "show_all_details"
+    on_enter: app.open_table()
+    pos_hint: {'center_x': .5, 'center_y': .5}
+    FloatLayout:
+        size: root.width-200, root.height-200
+
+        MDFillRoundFlatButton:
+            pos_hint:{"x":0.1,"y":0.03}
+            size_hint: 0.3, 0.1
+            text:"Go Back"
+            md_bg_color: (0.34,0.53,0.8,1)
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+
+<SingleStudentDetails>:
+    name: "single_student"
+    on_enter: self.trigger()
+
+    namee: namee
+    age:age
+    school:school
+    address:address
+    parent_name:parent_name
+    parent_email:parent_email
+    contact:contact
+    fees:fees
+    sub_but:sub_but
+
+    FloatLayout:
+        cols:1
+        FloatLayout:
+            size: root.width, root.height/2
+
+            Label:
+                text: "Student Details"
+                color: 0,0,0,1
+                size_hint: 0.8, 0.1
+                pos_hint: {"x":0.1, "top":1}
+                #font_size: (root.width**2 + root.height**2) / 14**4
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.1, "top":0.9}
+                text: "Name: "
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+            Label:
+                pos_hint: {"x":0.4, "top":0.9}
+                size_hint: 0.55, 0.06
+                id: namee
+                text: ""
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.1, "top":0.9-0.08}
+                text: "Age: "
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+            Label:
+                pos_hint: {"x":0.4, "top":0.9-0.08}
+                size_hint: 0.55, 0.06
+                id: age
+                text: ""
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.1, "top":0.9-0.16}
+                text: "School: "
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+            Label:
+                pos_hint: {"x":0.4, "top":0.9-0.16}
+                size_hint: 0.55, 0.06
+                id: school
+                text: ""
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.1, "top":0.9-0.24}
+                text: "Address: "
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+            Label:
+                pos_hint: {"x":0.4, "top":0.9-0.24}
+                size_hint: 0.55, 0.06
+                id: address
+                text: ""
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.1, "top":0.9-0.32}
+                text: "Parent's Name: "
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+            Label:
+                pos_hint: {"x":0.4, "top":0.9-0.32}
+                size_hint: 0.55, 0.06
+                id: parent_name
+                text: ""
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.1, "top":0.9-0.40}
+                text: "Parent's Email: "
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+            Label:
+                pos_hint: {"x":0.4, "top":0.9-0.40}
+                size_hint: 0.55, 0.06
+                id: parent_email
+                text: ""
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.1, "top":0.9-0.48}
+                text: "Contact No.: "
+                color: 0,0,0,1
+                #font_size: (root.width**2 + root.height**2) / 14**4
+                #font_size: self.height - dp(8)
+            Label:
+                pos_hint: {"x":0.4, "top":0.9-0.48}
+                size_hint: 0.55, 0.06
+                id: contact
+                text: ""
+                color: 0,0,0,1
+                #font_size: (root.width**2 + root.height**2) / 14**4
+                #font_size: self.height - dp(8)
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.1, "top":0.9-0.56}
+                text: "Fees/Class: "
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+            Label:
+                pos_hint: {"x":0.4, "top":0.9-0.56}
+                size_hint: 0.55, 0.06
+                id: fees
+                text: ""
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+
+        MDFillRoundFlatButton:
+            pos_hint:{"x":0.1,"y":0.03}
+            size_hint: 0.3, 0.1
+            text:"Go Back"
+            md_bg_color: (0.34,0.53,0.8,1)
+            on_release:
+                app.root.current = "show_all_details"
+                root.manager.transition.direction = "right"
+        MDFillRoundFlatButton:
+            id:sub_but
+            pos_hint:{"x":0.6,"y":0.03}
+            size_hint: 0.3, 0.1
+            text:"Fees Details"
+            md_bg_color: (0.34,0.53,0.8,1)
+            on_release:
+                app.root.current = "single_student_p2"
+                root.manager.transition.direction = "left"
+
+
+<SingleStudentDetailsP2>:
+    name: "single_student_p2"
+    on_enter: self.trigger()
+
+    namee: namee
+    fees: fees
+    amt: amt
+    date: date
+    classes: classes
+    container: container
+    sub_but:sub_but
+
+    FloatLayout:
+        cols:1
+        FloatLayout:
+            size: root.width, root.height/2
+
+            Label:
+                text: "Fees Details"
+                color: 0,0,0,1
+                size_hint: 0.8, 0.1
+                pos_hint: {"x":0.1, "top":1}
+                #font_size: (root.width**2 + root.height**2) / 14**4
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.1, "top":0.9}
+                text: "Name: "
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+            Label:
+                pos_hint: {"x":0.4, "top":0.9}
+                size_hint: 0.55, 0.06
+                id: namee
+                text: ""
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.1, "top":0.9-0.08}
+                text: "Fees/Class: "
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+            Label:
+                pos_hint: {"x":0.4, "top":0.9-0.08}
+                size_hint: 0.55, 0.06
+                id: fees
+                text: ""
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.1, "top":0.9-0.16}
+                text: "Amount Last Paid: "
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+            Label:
+                pos_hint: {"x":0.4, "top":0.9-0.16}
+                size_hint: 0.55, 0.06
+                id: amt
+                text: ""
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.1, "top":0.9-0.24}
+                text: "Date Last Paid: "
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+            Label:
+                pos_hint: {"x":0.4, "top":0.9-0.24}
+                size_hint: 0.55, 0.06
+                id: date
+                text: ""
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.1, "top":0.9-0.32}
+                text: "Classes Remaining: "
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+            Label:
+                pos_hint: {"x":0.4, "top":0.9-0.32}
+                size_hint: 0.55, 0.06
+                id: classes
+                text: ""
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+
+            ScrollView:
+                pos_hint: {"x":0.05, "top":0.9-0.40}
+                size_hint: 0.9, 0.35
+                MDList:
+                    id:container
+
+        MDFillRoundFlatButton:
+            pos_hint:{"x":0.1,"y":0.03}
+            size_hint: 0.3, 0.1
+            text:"Go Back"
+            md_bg_color: (0.34,0.53,0.8,1)
+            on_release:
+                app.root.current = "single_student"
+                root.manager.transition.direction = "right"
+        MDFillRoundFlatButton:
+            id:sub_but
+            pos_hint:{"x":0.6,"y":0.03}
+            size_hint: 0.3, 0.1
+            text:"Class Details"
+            md_bg_color: (0.34,0.53,0.8,1)
+            on_release:
+                app.root.current = "single_student_p3"
+                root.manager.transition.direction = "left"
+
+<SingleStudentDetailsP3>:
+    name: "single_student_p3"
+    on_enter: self.trigger()
+
+    namee: namee
+    days: days
+    amt: amt
+    date: date
+    classes: classes
+    container: container
+    sub_but:sub_but
+
+    FloatLayout:
+        cols:1
+        FloatLayout:
+            size: root.width, root.height/2
+
+            Label:
+                text: "Class Details"
+                color: 0,0,0,1
+                size_hint: 0.8, 0.1
+                pos_hint: {"x":0.1, "top":1}
+                #font_size: (root.width**2 + root.height**2) / 14**4
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.1, "top":0.9}
+                text: "Name: "
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+            Label:
+                pos_hint: {"x":0.4, "top":0.9}
+                size_hint: 0.55, 0.06
+                id: namee
+                text: ""
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.1, "top":0.9-0.08}
+                text: "Scheduled days: "
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+            Label:
+                pos_hint: {"x":0.4, "top":0.9-0.08}
+                size_hint: 0.55, 0.06
+                id: days
+                text: ""
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.1, "top":0.9-0.16}
+                text: "Amount Last Paid: "
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+            Label:
+                pos_hint: {"x":0.4, "top":0.9-0.16}
+                size_hint: 0.55, 0.06
+                id: amt
+                text: ""
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.1, "top":0.9-0.24}
+                text: "Date Last Paid: "
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+            Label:
+                pos_hint: {"x":0.4, "top":0.9-0.24}
+                size_hint: 0.55, 0.06
+                id: date
+                text: ""
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+
+            Label:
+                size_hint: 0.2,0.05
+                pos_hint: {"x":0.1, "top":0.9-0.32}
+                text: "Classes Remaining: "
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+            Label:
+                pos_hint: {"x":0.4, "top":0.9-0.32}
+                size_hint: 0.55, 0.06
+                id: classes
+                text: ""
+                color: 0,0,0,1
+                #font_size: self.height - dp(8)
+
+            ScrollView:
+                pos_hint: {"x":0.05, "top":0.9-0.40}
+                size_hint: 0.9, 0.35
+                MDList:
+                    id:container
+
+        MDFillRoundFlatButton:
+            pos_hint:{"x":0.1,"y":0.03}
+            size_hint: 0.3, 0.1
+            text:"Go Back"
+            md_bg_color: (0.34,0.53,0.8,1)
+            on_release:
+                app.root.current = "single_student"
+                root.manager.transition.direction = "right"
+        MDFillRoundFlatButton:
+            id:sub_but
+            pos_hint:{"x":0.6,"y":0.03}
+            size_hint: 0.3, 0.1
+            text:"Main Menu"
+            md_bg_color: (0.34,0.53,0.8,1)
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+
+<FeesManagementWindow>:
+    name: "fees_management"
+
+    FloatLayout:
+        size: root.width-200, root.height-200
+        Label:
+            text: "Welcome to Fees manager"
+            color: 0,0,0,1
+            size_hint: 0.8, 0.15
+            pos_hint: {"x":0.1, "top":1}
+        MDFillRoundFlatButton:
+            text: "Check Pending Fees"
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.9, 0.15
+            pos_hint: {"x":0.05, "top":0.88}
+            on_release:
+                app.root.current = "pending_fees"
+                root.manager.transition.direction = "left"
+        MDFillRoundFlatButton:
+            text: "Register Student Payment"
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.9, 0.15
+            pos_hint: {"x":0.05, "top":0.71}
+            on_release:
+                app.root.current = "reg_payment"
+                root.manager.transition.direction = "left"
+        MDFillRoundFlatButton:
+            text: "Total income for current Month"
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.9, 0.15
+            pos_hint: {"x":0.05, "top":0.54}
+            on_release:
+                app.root.current = "income"
+                root.manager.transition.direction = "left"
+        MDFillRoundFlatButton:
+            text: "Show All Payment Records"
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.9, 0.15
+            pos_hint: {"x":0.05, "top":0.37}
+            on_release:
+                app.root.current = "pay_rec"
+                root.manager.transition.direction = "left"
+        MDFillRoundFlatButton:
+            text: "Back"
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.9, 0.15
+            pos_hint: {"x":0.05, "top":0.20}
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+
+<PendingFees>:
+    name: "pending_fees"
+    on_enter: self.suh()
+    FloatLayout:
+        cols:1
+        FloatLayout:
+            size: root.width, root.height/2
+
+            Label:
+                text: "Pending Fees"
+                color: 0,0,0,1
+                size_hint: 0.8, 0.1
+                pos_hint: {"x":0.1, "top":1}
+                #font_size: self.width - dp(5)
+            ScrollView:
+                pos_hint: {"x":0.05, "top":0.9-0.1}
+                size_hint: 0.9, 0.6
+                MDList:
+                    id:container
+
+            MDFillRoundFlatButton:
+                pos_hint:{"x":0.3,"y":0.05}
+                size_hint: 0.4, 0.1
+                md_bg_color: (0.34,0.53,0.8,1)
+                text:"Go Back"
+                on_release:
+                    app.root.current = "fees_management"
+                    root.manager.transition.direction = "right"
+
+<RegisterPayment>:
+    name: "reg_payment"
+
+    namee: namee
+    amt: amt
+    sub_but:sub_but
+    #result:result
+
+    FloatLayout:
+        cols:1
+        FloatLayout:
+            size: root.width, root.height/2
+
+            Label:
+                text: "Register Payment"
+                color: 0,0,0,1
+                size_hint: 0.8, 0.1
+                pos_hint: {"x":0.1, "top":1}
+                #font_size: (root.width**2 + root.height**2) / 14**4
+            Label:
+                size_hint: 0.2,0.15
+                pos_hint: {"x":0.05, "top":0.77}
+                text: "Name: "
+                color: 0,0,0,1
+                #font_size: (root.width**2 + root.height**2) / 14**4
+
+            MDRectangleFlatButton:
+                pos_hint: {"x":0.3, "top":0.75}
+                size_hint: 0.55, 0.1
+                id: namee
+                text:"Select name"
+                #font_size: (root.width**2 + root.height**2) / 14**4
+                on_release:
+                    root.select_name()
+
+            Label:
+                size_hint: 0.2,0.15
+                pos_hint: {"x":0.05, "top":0.77-0.18}
+                text: "Amount Paid: "
+                color: 0,0,0,1
+                #font_size: (root.width**2 + root.height**2) / 14**4
+            TextInput:
+                pos_hint: {"x":0.3, "top":0.75-0.18}
+                size_hint: 0.55, 0.1
+                id: amt
+                multiline: False
+                #font_size: (root.width**2 + root.height**2) / 14**4.15
+
+        MDFillRoundFlatButton:
+            pos_hint:{"x":0.1,"y":0.03}
+            size_hint: 0.3, 0.1
+            md_bg_color: (0.34,0.53,0.8,1)
+            text:"Go Back"
+            on_release:
+                app.root.current = "fees_management"
+                root.manager.transition.direction = "right"
+        MDFillRoundFlatButton:
+            id:sub_but
+            pos_hint:{"x":0.6,"y":0.03}
+            size_hint: 0.3, 0.1
+            md_bg_color: (0.34,0.53,0.8,1)
+            text:"Submit" if sub_but.state == "normal" else "Processing"
+            on_release:
+                root.submit()
+                if app.open_dialogue() == 0:\
+                app.root.current = "fees_management"
+                root.manager.transition.direction = "right"
+
+<TotalIncome>:
+    name: "income"
+    month:month
+    amount:amount
+    on_enter: self.suh()
+    FloatLayout:
+        cols:1
+        FloatLayout:
+            size: root.width, root.height/2
+
+            Label:
+                text: "Total Income for"
+                color: 0,0,0,1
+                size_hint: 0.8, 0.1
+                pos_hint: {"x":0.1, "top":1}
+                #font_size: (root.width**2 + root.height**2) / 14**8
+            Label:
+                id:month
+                text: ""
+                color: 0,0,0,1
+                size_hint: 0.8, 0.1
+                pos_hint: {"x":0.1, "top":0.9}
+                #font_size: (root.width**2 + root.height**2) / 14**8
+            Label:
+                id: amount
+                size_hint: 0.8,0.15
+                pos_hint: {"x":0.1, "top":0.7}
+                text: ""
+                color: 1,0,0,1
+                #font_size: (root.width**2 + root.height**2) / 14**6
+
+            MDFillRoundFlatButton:
+                pos_hint:{"x":0.1,"y":0.03}
+                size_hint: 0.3, 0.1
+                md_bg_color: (0.34,0.53,0.8,1)
+                text:"Go Back"
+                on_release:
+                    app.root.current = "fees_management"
+                    root.manager.transition.direction = "right"
+            MDFillRoundFlatButton:
+                pos_hint:{"x":0.6,"y":0.03}
+                size_hint: 0.3, 0.1
+                md_bg_color: (0.34,0.53,0.8,1)
+                text:"Check for other months"
+                on_release:
+                    root.change_month()
+
+<PaymentRecords>:
+    name: "pay_rec"
+    on_enter: app.open_payment_details()
+    pos_hint: {'center_x': .5, 'center_y': .5}
+    FloatLayout:
+        size: root.width-200, root.height-200
+
+        MDFillRoundFlatButton:
+            pos_hint:{"x":0.1,"y":0.03}
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.3, 0.1
+            text:"Go Back"
+            on_release:
+                app.root.current = "fees_management"
+                root.manager.transition.direction = "right"
+
+<ClassManagement>:
+    name: "class_manage"
+    FloatLayout:
+        size: root.width-200, root.height-200
+        Label:
+            text: "Welcome to Class Manager"
+            color: 0,0,0,1
+            size_hint: 0.8, 0.15
+            pos_hint: {"x":0.1, "top":1}
+        MDFillRoundFlatButton:
+            text: "View/Update Schedule"
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.9, 0.15
+            pos_hint: {"x":0.05, "top":0.85}
+            on_release:
+                app.root.current = "schedule"
+                root.manager.transition.direction = "left"
+        MDFillRoundFlatButton:
+            text: "Register Individual Classes"
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.9, 0.15
+            pos_hint: {"x":0.05, "top":0.65}
+            on_release:
+                app.root.current = "reg_class"
+                root.manager.transition.direction = "left"
+        MDFillRoundFlatButton:
+            text: "View Class Records"
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.9, 0.15
+            pos_hint: {"x":0.05, "top":0.45}
+            on_release:
+                app.root.current = "class_rec"
+                root.manager.transition.direction = "left"
+        MDFillRoundFlatButton:
+            text: "Back"
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.9, 0.15
+            pos_hint: {"x":0.05, "top":0.25}
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+
+<Scheduler>:
+    name:"schedule"
+    on_enter: self.trigger()
+
+    sub_but:sub_but
+
+    FloatLayout:
+        cols:1
+        Label:
+            text: "Weekly Schedule"
+            color: 0,0,0,1
+            size_hint: 0.8, 0.1
+            pos_hint: {"x":0.1, "top":1}
+            font_size: dp(24)
+        ScrollView:
+            GridLayout:
+                size: root.width-50, root.height-200
+                pos: 100, 100
+                size_hint_x: None
+                spacing: 20, 20
+                cols:7
+                col_default_width: root.width*0.3
+                width: self.minimum_width
+                Label:
+                    #pos_hint: {"x":0.02, "top":0.9}
+                    text: "Monday"
+                    color: 0,0,0,1
+                    #font_size: self.height - dp(8)
+                    size_hint_y:0.20
+                Label:
+                    #size_hint_x: None
+                    #pos_hint: {"x":0.24, "top":0.9}
+                    text: "Tuesday"
+                    color: 0,0,0,1
+                    #font_size: self.height - dp(8)
+                    size_hint_y:0.20
+                Label:
+                    #size_hint_x: None
+                    #pos_hint: {"x":0.48, "top":0.9}
+                    text: "Wednesday"
+                    color: 0,0,0,1
+                    #font_size: self.height - dp(8)
+                    size_hint_y:0.20
+                Label:
+                    #size_hint_x: None
+                    #pos_hint: {"x":0.62, "top":0.9}
+                    text: "Thursday"
+                    color: 0,0,0,1
+                    #font_size: self.height - dp(8)
+                    size_hint_y:0.20
+                Label:
+                    #size_hint_x: None
+                    #pos_hint: {"x":0.86, "top":0.9}
+                    text: "Friday"
+                    color: 0,0,0,1
+                    #font_size: self.height - dp(8)
+                    size_hint_y:0.20
+                Label:
+                    #size_hint_x: None
+                    #pos_hint: {"x":1.10, "top":0.9}
+                    text: "Saturday"
+                    color: 0,0,0,1
+                    #font_size: self.height - dp(8)
+                    size_hint_y:0.20
+                Label:
+                    #size_hint_x: None
+                    #pos_hint: {"x":1.44, "top":0.9}
+                    text: "Sunday"
+                    color: 0,0,0,1
+                    #font_size: self.height - dp(8)
+                    size_hint_y:0.20
+                ScrollView:
+                    #pos_hint: {"x":0.02, "top":0.9-0.05}
+                    #size_hint: 0.23, 0.45
+                    size_hint_y:0.30
+                    MDList:
+                        id:Monday
+                ScrollView:
+                    #pos_hint: {"x":0.14, "top":0.9-0.05}
+                    #size_hint: 0.23, 0.45
+                    size_hint_y:0.30
+                    MDList:
+                        id:Tuesday
+                ScrollView:
+                    #pos_hint: {"x":0.28, "top":0.9-0.05}
+                    #size_hint: 0.23, 0.45
+                    size_hint_y:0.30
+                    MDList:
+                        id:Wednesday
+                ScrollView:
+                    #pos_hint: {"x":0.42, "top":0.9-0.05}
+                    #size_hint: 0.23, 0.45
+                    size_hint_y:0.30
+                    MDList:
+                        id:Thursday
+                ScrollView:
+                    #pos_hint: {"x":0.56, "top":0.9-0.05}
+                    #size_hint: 0.23, 0.45
+                    size_hint_y:0.30
+                    MDList:
+                        id:Friday
+                ScrollView:
+                    #pos_hint: {"x":0.70, "top":0.9-0.05}
+                    #size_hint: 0.23, 0.45
+                    size_hint_y:0.30
+                    MDList:
+                        id:Saturday
+                ScrollView:
+                    #pos_hint: {"x":0.84, "top":0.9-0.05}
+                    #size_hint: 0.23, 0.45
+                    size_hint_y:0.30
+                    MDList:
+                        id:Sunday
+                FloatLayout:
+                    size_hint: 0.2, 0.2
+                    MDFillRoundFlatButton:
+                        id:mon_plus
+                        pos_hint:{"x":0.3,"y":0.2}
+                        size_hint_y:0.30
+                        md_bg_color: (0.12,0.71,0.28,1)
+                        #font_size: (root.width**2 + root.height**2) / 14**4
+                        text:"+"
+                        on_release: root.show_bottom_sheet(1,1)
+
+                FloatLayout:
+                    size_hint: 0.2, 0.2
+                    MDFillRoundFlatButton:
+                        id:tue_plus
+                        pos_hint:{"x":0.3,"y":0.2}
+                        size_hint_y:0.30
+                        background_color: 0, 1, 0, 1
+                        text:"+"
+                        md_bg_color: (0.12,0.71,0.28,1)
+                        #font_size: (root.width**2 + root.height**2) / 14**4
+                        on_release: root.show_bottom_sheet(2,1)
+
+                FloatLayout:
+                    size_hint: 0.2, 0.2
+                    MDFillRoundFlatButton:
+                        id:wed_plus
+                        pos_hint:{"x":0.3,"y":0.2}
+                        size_hint_y:0.30
+                        text:"+"
+                        md_bg_color: (0.12,0.71,0.28,1)
+                        #font_size: (root.width**2 + root.height**2) / 14**4
+                        on_release: root.show_bottom_sheet(3,1)
+
+                FloatLayout:
+                    size_hint: 0.2, 0.2
+                    MDFillRoundFlatButton:
+                        id:thu_plus
+                        pos_hint:{"x":0.3,"y":0.2}
+                        size_hint_y:0.30
+                        text:"+"
+                        md_bg_color: (0.12,0.71,0.28,1)
+                        #font_size: (root.width**2 + root.height**2) / 14**4
+                        on_release: root.show_bottom_sheet(4,1)
+
+                FloatLayout:
+                    size_hint: 0.2, 0.2
+                    MDFillRoundFlatButton:
+                        id:fri_plus
+                        pos_hint:{"x":0.3,"y":0.2}
+                        size_hint_y:0.30
+                        text:"+"
+                        md_bg_color: (0.12,0.71,0.28,1)
+                        #font_size: (root.width**2 + root.height**2) / 14**4
+                        on_release: root.show_bottom_sheet(5,1)
+
+                FloatLayout:
+                    size_hint: 0.2, 0.2
+                    MDFillRoundFlatButton:
+                        id:sat_plus
+                        pos_hint:{"x":0.3,"y":0.2}
+                        size_hint_y:0.30
+                        text:"+"
+                        md_bg_color: (0.12,0.71,0.28,1)
+                        #font_size: (root.width**2 + root.height**2) / 14**4
+                        on_release: root.show_bottom_sheet(6,1)
+
+                FloatLayout:
+                    size_hint: 0.2, 0.2
+                    MDFillRoundFlatButton:
+                        id:sun_plus
+                        pos_hint:{"x":0.3,"y":0.2}
+                        size_hint_y:0.30
+                        text:"+"
+                        md_bg_color: (0.12,0.71,0.28,1)
+                        #font_size: (root.width**2 + root.height**2) / 14**4
+                        on_release: root.show_bottom_sheet(7,1)
+
+                FloatLayout:
+                    size_hint: 0.2, 0.2
+                    MDFillRoundFlatButton:
+                        id:mon_min
+                        pos_hint:{"x":0.3,"y":0.9}
+                        size_hint_y:0.30
+                        md_bg_color: (0.72,0.12,0.12,1)
+                        #font_size: (root.width**2 + root.height**2) / 14**4
+                        text:"-"
+                        on_release: root.show_bottom_sheet(1,2)
+
+                FloatLayout:
+                    size_hint: 0.2, 0.2
+                    MDFillRoundFlatButton:
+                        id:tue_min
+                        pos_hint:{"x":0.3,"y":0.9}
+                        size_hint_y:0.30
+                        background_color: 1, 0, 0, 1
+                        text:"-"
+                        md_bg_color: (0.72,0.12,0.12,1)
+                        #font_size: (root.width**2 + root.height**2) / 14**4
+                        on_release: root.show_bottom_sheet(2,2)
+
+                FloatLayout:
+                    size_hint: 0.2, 0.2
+                    MDFillRoundFlatButton:
+                        id:wed_min
+                        pos_hint:{"x":0.3,"y":0.9}
+                        size_hint_y:0.30
+                        text:"-"
+                        md_bg_color: (0.72,0.12,0.12,1)
+                        #font_size: (root.width**2 + root.height**2) / 14**4
+                        on_release: root.show_bottom_sheet(3,2)
+
+                FloatLayout:
+                    size_hint: 0.2, 0.2
+                    MDFillRoundFlatButton:
+                        id:thu_min
+                        pos_hint:{"x":0.3,"y":0.9}
+                        size_hint_y:0.30
+                        text:"-"
+                        md_bg_color: (0.72,0.12,0.12,1)
+                        #font_size: (root.width**2 + root.height**2) / 14**4
+                        on_release: root.show_bottom_sheet(4,2)
+
+                FloatLayout:
+                    size_hint: 0.2, 0.2
+                    MDFillRoundFlatButton:
+                        id:fri_min
+                        pos_hint:{"x":0.3,"y":0.9}
+                        size_hint_y:0.30
+                        text:"-"
+                        md_bg_color: (0.72,0.12,0.12,1)
+                        #font_size: (root.width**2 + root.height**2) / 14**4
+                        on_release: root.show_bottom_sheet(5,2)
+
+                FloatLayout:
+                    size_hint: 0.2, 0.2
+                    MDFillRoundFlatButton:
+                        id:sat_min
+                        pos_hint:{"x":0.3,"y":0.9}
+                        size_hint_y:0.30
+                        text:"-"
+                        md_bg_color: (0.72,0.12,0.12,1)
+                        #font_size: (root.width**2 + root.height**2) / 14**4
+                        on_release: root.show_bottom_sheet(6,2)
+
+                FloatLayout:
+                    size_hint: 0.2, 0.2
+                    MDFillRoundFlatButton:
+                        id:sun_min
+                        pos_hint:{"x":0.3,"y":0.9}
+                        size_hint_y:0.30
+                        text:"-"
+                        md_bg_color: (0.72,0.12,0.12,1)
+                        #font_size: (root.width**2 + root.height**2) / 14**4
+                        on_release: root.show_bottom_sheet(7,2)
+        MDFillRoundFlatButton:
+            pos_hint:{"x":0.1,"y":0.03}
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.3, 0.1
+            text:"Go Back"
+            on_release:
+                app.root.current = "class_manage"
+                root.manager.transition.direction = "right"
+        MDFillRoundFlatButton:
+            id:sub_but
+            pos_hint:{"x":0.6,"y":0.03}
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.3, 0.1
+            text:"Main Menu"
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "left"
+
+<RegisterClass>:
+    name: "reg_class"
+
+    #canvas.before:
+    #    Rectangle:
+    #        pos: self.pos
+    #        size: self.size
+    #        source: 'back.jpg'
+
+    namee: namee
+    selected_day: selected_day
+    selected_operation: selected_operation
+    sub_but:sub_but
+    #result:result
+
+    FloatLayout:
+        cols:1
+        FloatLayout:
+            size: root.width, root.height/2
+
+            Label:
+                text: "Register Classes"
+                color: 0,0,0,1
+                size_hint: 0.8, 0.1
+                pos_hint: {"x":0.1, "top":1}
+                #font_size: (root.width**2 + root.height**2) / 14**4
+
+            #MDToolbar:
+            #    title: "Register Classes"
+            #    halign: "center"
+            #    color: 0,0,0,1
+            #    size_hint: 1, 0.1
+            #    pos_hint: {"x":0, "top":1}
+            #    font_size: (root.width**2 + root.height**2) / 14**4
+            Label:
+                size_hint: 0.2,0.15
+                pos_hint: {"x":0.05, "top":0.87}
+                text: "Name: "
+                color: 0,0,0,1
+                #font_size: (root.width**2 + root.height**2) / 14**4
+            MDRectangleFlatButton:
+                pos_hint: {"x":0.3, "top":0.85}
+                size_hint: 0.55, 0.1
+                id: namee
+                text:"Select name"
+                #font_size: (root.width**2 + root.height**2) / 14**4
+                on_release:
+                    root.select_name()
+
+            Label:
+                size_hint: 0.2,0.15
+                pos_hint: {"x":0.05, "top":0.87-0.18}
+                text: "Class Date: "
+                color: 0,0,0,1
+                #font_size: (root.width**2 + root.height**2) / 14**4
+            MDRectangleFlatButton:
+                pos_hint: {"x":0.3, "top":0.85-0.18}
+                size_hint: 0.55, 0.1
+                id: selected_day
+                text:"Select Date"
+                #font_size: (root.width**2 + root.height**2) / 14**4
+                on_release:
+                    root.show_date_picker()
+
+            Label:
+                size_hint: 0.2,0.15
+                pos_hint: {"x":0.05, "top":0.87-0.36}
+                text: "Add/Subtract class: "
+                color: 0,0,0,1
+                #font_size: (root.width**2 + root.height**2) / 14**4
+            MDRectangleFlatButton:
+                pos_hint: {"x":0.3, "top":0.85-0.36}
+                size_hint: 0.55, 0.1
+                id: selected_operation
+                text:"Select Operation"
+                #font_size: (root.width**2 + root.height**2) / 14**4
+                on_release:
+                    root.select_operation()
+
+
+        MDFillRoundFlatButton:
+            pos_hint:{"x":0.1,"y":0.03}
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.3, 0.1
+            text:"Go Back"
+            on_release:
+                app.root.current = "class_manage"
+                root.manager.transition.direction = "right"
+        MDFillRoundFlatButton:
+            id:sub_but
+            pos_hint:{"x":0.6,"y":0.03}
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.3, 0.1
+            text:"Submit" if sub_but.state == "normal" else "Processing"
+            on_release:
+                root.submit()
+                app.root.current = "class_manage"
+                root.manager.transition.direction = "right"
+
+<ClassRecords>:
+    name: "class_rec"
+    on_enter: root.open_class_details()
+    pos_hint: {'center_x': .5, 'center_y': .5}
+    FloatLayout:
+        size: root.width-200, root.height-200
+        MDFillRoundFlatButton:
+            pos_hint:{"x":0.1,"y":0.03}
+            md_bg_color: (0.34,0.53,0.8,1)
+            size_hint: 0.3, 0.1
+            text:"Go Back"
+            on_release:
+                app.root.current = "class_manage"
+                root.manager.transition.direction = "right"

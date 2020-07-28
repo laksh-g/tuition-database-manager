@@ -9,10 +9,12 @@ client = gspread.authorize(creds)
 
 
 #IMPORTANT fill the following lines with strings of the name of your google sheet
-sheets = client.open("<Insert name of google_sheet>").get_worksheet(4)
-payments = client.open("<Insert name of google_sheet>").get_worksheet(5)
-classes = client.open("<Insert name of google_sheet>").get_worksheet(6)
-schedule = client.open("<Insert name of google_sheet>").get_worksheet(7)
+#-------------------------------------------------------------------------------------------------------------------------------------------------
+sheets = client.open("<Insert name of google_sheet>").get_worksheet(0)
+payments = client.open("<Insert name of google_sheet>").get_worksheet(1)
+classes = client.open("<Insert name of google_sheet>").get_worksheet(2)
+schedule = client.open("<Insert name of google_sheet>").get_worksheet(3)
+#-------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 sched = schedule.get_all_records()
